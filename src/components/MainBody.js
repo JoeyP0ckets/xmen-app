@@ -10,7 +10,7 @@ export default class MainBody extends Component {
     super()
     this.state = {
       isLoading: true,
-      mutantNameArray: [],
+      selectedTeam: [],
       allMutants: [],
       sortedByTeam: false,
   }
@@ -57,15 +57,17 @@ export default class MainBody extends Component {
  
   
   
-  selectMutant = (event) => {
-    console.log(event)
-  //  return console.log(selectedMutantName)
+  addMutantToTeam = (mutant) => {
+    console.log("You clicked just clicked " + mutant.name + "!")
+    this.setState({ selectedTeam: [...this.state.selectedTeam, mutant.name]
+      
+    })
   }
   
   
   
   render() {
-    console.log(this.state)
+    console.log(this.state.selectedTeam)
     let mutantArrayFinal = this.sortTeams()
     // if (mutantArrayFinal === null || mutantArrayFinal === undefined || mutantArrayFinal.length < 1) {
     //   return (
@@ -78,9 +80,9 @@ export default class MainBody extends Component {
         <ContentPane 
           // mutantNames={this.state.mutantNames} 
           getMutants={mutantArrayFinal}
-          selectMutant={this.selectMutant}
+          addMutantToTeam={this.addMutantToTeam}
         />
-        <SideBar />
+        <SideBar selectedTeam={this.state.selectedTeam}/>
       </div>
     )
   }
