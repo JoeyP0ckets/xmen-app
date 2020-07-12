@@ -36,7 +36,7 @@ export default class MutantContainer extends Component {
         }
         {!this.state.isFront && <MutantCardBack mutant={this.props.mutant}/>
         }
-        <button className="add-mutant" onClick={ event => this.props.selectMutant(event)}>Add Mutant!</button>
+        <button className="add-mutant" onClick={() => this.props.addMutantToTeam(this.props.mutant)}>Add Mutant!</button>
       </div>
     )
   }

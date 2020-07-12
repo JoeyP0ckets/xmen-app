@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import MutantContainer from './MutantContainer'
-import CardExampleCard from './CardExampleCard'
+
 
 export default class ContentPane extends Component {
   
@@ -14,7 +14,7 @@ generateMutantContainer = () => {
   return this.props.getMutants.map(mutant =>
    <MutantContainer
     mutant={mutant}
-    selectMutant={this.props.selectMutant}
+    addMutantToTeam={this.props.addMutantToTeam}
     />
   )
 }
