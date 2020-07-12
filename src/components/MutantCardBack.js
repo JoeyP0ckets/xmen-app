@@ -3,11 +3,11 @@ import React from 'react'
 const mutantCardBack = (props) => {
   let mutant = props.mutant
   return (
-    <div>
+    <div height={200} width={200}>
       <h3>Real Name: {mutant.realName}</h3>
-      <h5>Powers: {mutant.powers}</h5>
+      <h6>Powers: {mutant.powers}</h6>
       <h3>Team: {mutant.team}</h3>
-      <h7>Bio: {mutant.bio}</h7>
+      {/* <h6>Bio: {mutant.bio}</h6> */}
 
     </div>
   )
