@@ -1,12 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class NavBar extends Component {
-  render() {
-    return (
+const NavBar = (props) => {
+    console.log(props)
+  return (
       <div>
         <h1>Welcome X-MAN</h1>
         <h3>Select A Character</h3>
+        <button onClick={props.toggleSortByTeam} className="team-sort">Sort By Team</button>
       </div>
     )
-  }
-}
+} 
+
+export default NavBar
